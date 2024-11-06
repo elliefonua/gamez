@@ -1,59 +1,99 @@
 print("\nWelcome to Gold Quest Island! There will be gold scattered all around the island, you only need to collect 5!\n")
 
-path1 = "You enter the jungle. You hit something on the ground and see it's your first piece of gold. Just then a monkey comes and takes it from your hand and dashes the other way!\n"
-path2 = "You continue walking the shore, after a few hours you find no gold.\n"
-path3 = "You chase the monkey for a couple of minutes but you lose sight of it. It's ok, there are more pieces of gold around the island.\n"
-path4 = "You decide not to chase the monkey because there are other pieces of gold on the island.\n"
-path5 = ("You enter the cave only to realize that it belonged to an evil witch!\n"
-          "The witch casts a spell on you and you fall deeply asleep.\n"
-          "You wake up in the middle of a swamp, and realize there is a pack of crocodiles all around the swamp.\n")
-path6 = "You sleep peacefully on the beach and wake up to a bird pecking your face! You ~shoo~ it away and decide to venture into the jungle.\n"
+path1 = "\nYou enter the jungle, you explore for a few hours until sundown, you found no gold today. You realize it's getting late\nyou need a place to sleep.\n"
+path2 = "\nYou continue walking the shore, after a few hours you find no gold. The sun is setting and you need a place to sleep.\n"
+path3 = "\nYou enter the cave and set up for sleep. You wake up the next morning and head back into the jungle.\n"
+path4 = "\nYou get comfortable on the beach and rest well. The next morning you set off into the jungle to find your gold!\n"
+path5 = "\nYou decide to explore a cave and you discover a grand pile of what seems to be thousands of pieces of gold!\n"
+path6 = "\nYou decide to take a rest, something about the cave is intriguing. You go inside and discover thousands of pieces of gold!\n"
+path7 = "\nskibidi sigmaa! your out! leave bumm! [dw pookie wookie, you can play again!]\n"
+path8 = "\nYou have chosen to accept this duel!\n"
+path9 = "\nYou toss the banana out the cave unknowingly that the monkey was actually starving.\nthe monkey king dashes out the cave following the banana without giving it a second thought.\nyou are surprised, but happy\n you run over and take his gold\n"
+path10 = "\nYou throw the banana at the monkey king and it pokes him right in the eye\nsuddenly the monkey starts to cry as you run over and steal his gold\n"
 
-# Variable to track player's lives
-player_lives = 3
-gold_collected = 0  # Initialize gold collected
+def hello(name):
+    return (input(f"What is your {name}"))
 
-# Function for asking location questions
-def location(side):
-    return f"Would you like to {side}?\n"
+print(hello("name?\n"))
 
-# Main game loop
-while player_lives > 0 and gold_collected < 5:
-    # Ask initial path decision
-    print(location("go into the jungle or keep walking the shore? (Type 'jungle' or 'shore')"))
-    player_input = input().lower()
+def walky(walk):
+    return (input(f"Would you like to {walk}"))
 
-    if player_input == "shore":
-        print(path2)
-    else:
-        print(path1)
-        # After entering the jungle, ask if the player wants to chase the monkey
-        print(location("chase the monkey? (Type 'yes' or 'no')"))
-        player_input = input().lower()
+walker = (walky("go into the 'jungle' or keep walking the 'shore'?\n"))
 
-        if player_input == "yes":
-            print(path3)
-            gold_collected += 1  # Increase gold count for chasing the monkey
-        else:
-            print(path4)
-
-    # Ask for sleeping location
-    print(location("sleep in the cave or on the beach? (Type 'cave' or 'beach')"))
-    player_input = input().lower()
-
-    if player_input == "cave":
-        print(path5)
-        player_lives -= 1  # Losing a life after sleeping in the cave
-    else:
-        print(path6)
-
-    # Encounter jaguar and reduce lives
-    print("A jaguar jumps outta nowhere. You have no choice but to face it head on.")
-    player_lives -= 1  # Deduct one life for the challenge
-    print(f"You have {player_lives} lives remaining.")
-
-# Game over conditions
-if gold_collected >= 5:
-    print("Congratulations! You've collected all the gold and completed the quest!")
+if walker == "shore":
+    print(path2)
 else:
-    print("You've run out of lives! Game over.")
+    print(path1)
+
+def locations(side):
+    return (input(f"Would you like to {side}"))
+
+sleeping = (locations(" sleep on the 'beach' or in the 'cave'?\n"))
+
+if sleeping == "cave":
+    print(path3)
+else:
+    print(path4)
+
+print("You climb up a mountain and find a cave,")
+
+def rest(sid):
+    return (input(f"do you want to 'explore' it or {sid}"))
+
+sleep = (rest("take a 'rest'?"))
+
+if sleep == "explore":
+    print(path5)
+else:
+    print(path6)
+
+def monkey(boss):
+    return (input(f"Monkey King:\n '{boss}"))
+
+print(monkey("What brings you here filthy mortal'\n"))
+print(monkey("I've spent my whole life collecting this mountain of gold!'\n"))
+print(monkey("I will not lose it to some peasant who doesn't even have a tail!'\n\n"))
+
+duel = (input("This calls for a duel! Will you 'accept' or 'decline'?\n"))
+
+
+
+
+
+print("you:\nWell, no WONDER there wasn't that much gold around, this monkey took it ALL!\nNot FAIR! You must take back what is yours!\n")
+
+player_hp = 100
+
+for _ in range(5):
+    if player_hp > 0:
+        print("The monkey lunges toward you in defense of it's gold.\n")
+        player_hp -= 30
+        print("You lost 30 hp!")
+        
+    if player_hp > 0:
+        print(f"You have {player_hp} hp remaining.\n")
+        print("Do you want to 'continue' the battle or 'quit'?\n")
+
+        if input() == "quit":
+            print("\nThanks for playing! Goodbye![TEEHEE]\n")
+            break
+    else:
+        print("\nYou have been defeated! Game Over!\n")
+        break
+
+if player_hp > 0:
+    print(input("\n\nSuddenly, you see a banana in your pocket that you picked up from the climb to eat for dinner.\n\nWill you 'throw' it at the monkey or 'toss' it outside the cave?\n"))
+
+    banana = input()
+
+    if banana == 'toss':
+        print(path9)
+    else:
+        print(path10)
+        print("congrats my skibidi sigma! you have collected all the gold you needed!\n")
+        print("Thanks for playing! Hope to see you again soon!{name}\n")
+if duel == "accept":
+    print(path8)
+else:
+    print(path7)
