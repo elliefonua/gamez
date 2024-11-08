@@ -1,3 +1,5 @@
+# (variable) what each path causes to happen to the user - ellie, sofia, lindsey
+
 
 
 # (variable) what each path causes to happen to the user - ellie, sofia, lindsey
@@ -11,6 +13,8 @@ path2 = "\nYou continue walking the shore, after a few hours you see something s
 path3 = "\nYou enter the cave and set up for sleep. You wake up the next morning and head back into the jungle.\n"
 
 path4 = "\nYou get comfortable on the beach and rest well. The next morning you set off into the jungle to find your golden bananas!\n"
+
+# (function) ask the quests questions and where they want to go for the different locations on the game map - ellie
 
 path5 = "\nYou decide to explore a cave and you discover a grand pile of what seems to be thousands of pieces of golden bananas!\n"
 
@@ -48,19 +52,23 @@ else:
     
 golden_banana = 0
 
+
+
+
+sleeping = (input(" sleep on the 'beach' in the 'cave' or in the 'bushes'?\n"))
+
+
 while golden_banana <= 0:
     print("would you like to sleep on the 'beach', in the 'cave', or in the 'bushes'?\n")
-    break
+    
     if golden_banana > 0:
         print("you have {golden_banana} ")
         break
     if golden_banana < 0:
-        print("would you like to sleep on the 'beach', in the 'cave', or in the 'bushes'?\n")
+        print(sleeping)
     break
-def locations(side):
-    return (input(f"Would you like to {side}"))
 
-sleeping = (locations(" sleep on the 'beach' in the 'cave' or in the 'bushes'?\n"))
+
 
 if sleeping == "cave":
     print(path3)
@@ -77,12 +85,12 @@ print("You climb up a mountain and find a cave.")
 
 def rest(sid):
     return (input(f"do you want to 'explore' it or {sid}"))
-    pass
+    
 sleep = (input("take a 'rest'?: \n"))
 
-while sleep == "explore":
+if sleep == "explore":
     print(path5)
-if sleep == "no":
+else:
     print(path6)
 
 
