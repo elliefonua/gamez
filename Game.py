@@ -55,7 +55,6 @@ else:
 golden_banana = 0
 
 # (loop) how many lives the user has and whether they would like to restart or continue and controls how long the condition goes for until game is done - lindsey
-
 while golden_banana < 5:
     sleeping = input("Would you like to sleep on the 'beach', in the 'cave', or in the 'bushes'?\n")
 
@@ -67,7 +66,8 @@ while golden_banana < 5:
         print(path11)
     else:
         print(path4)
-
+        
+    print("you climb a mountain and at the top is cave")
 
     sleep = input("Do you want to 'explore' it or 'take a rest'?\n")
 
@@ -77,7 +77,6 @@ while golden_banana < 5:
     else:
         print(path6)
 
-
     defeat_monkey = input("Monkey King: 'What brings you here, filthy mortal?' Would you like to accept the duel? (yes/no)\n")
 
 # (condition) conditoning wether the user takes path one or two and what happens when user chooses different answers - sofia
@@ -86,18 +85,19 @@ while golden_banana < 5:
         print(path7)
         break
     else:
-
-
         
         print(path8)
-        print("You: 'Well, no WONDER there wasn't that much gold around, this monkey took it ALL! Not FAIR! You must take back what is yours!'\n")
+        print("You: 'Well, no WONDER there weren't any golden bananas around, this monkey took it ALL! Not FAIR! You must take back what is yours!'\n")
 
 
-    banana = input("\n\nSuddenly, you see a banana in your pocket that you picked up earlier.\nWill you 'throw' it at the monkey or 'toss' it outside the cave?\n")
+    banana = input("\n\nSuddenly, you see the fake golden banana in your pocket that you picked up earlier.\nWill you 'throw' it at the monkey or 'toss' it outside the cave?\n")
 
 
-    if banana == 'toss':
+    if banana == "toss":
         print(path9)
+        print("Congrats, my skibidi sigma! You have collected all the gold you needed!\n")
+        print("Thanks for playing! Hope to see you again soon![MERP]\n")
+        break
     else:
         print(path10)
         print("Congrats, my skibidi sigma! You have collected all the gold you needed!\n")
